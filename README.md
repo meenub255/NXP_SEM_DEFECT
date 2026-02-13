@@ -5,10 +5,10 @@
 ### Project Highlights
 | Metric | Value | Description |
 | :--- | :--- | :--- |
-| **Accuracy** | **92.07%** | High performance on test set |
-| **Dataset Size** | **1807** | Total images (original + synthetic) |
+| **Accuracy** | **95.93%** | High performance on test set |
+| **Dataset Size** | **1967** | Total images (original + synthetic) |
 | **Classes** | **8** | Comprehensive defect coverage |
-| **Model Size** | **268 KB** | Ultra-lightweight for edge (NXP) |
+| **Model Size** | **285 KB** | Ultra-lightweight for edge (NXP) |
 
 ---
 
@@ -44,23 +44,36 @@ Our lightweight "Trans-Distilled" MobileNetV3 architecture demonstrates strong g
 ![Confusion Matrix](assets/confusion_matrix.png)<br/>
 *(`confusion_matrix.png` is in assets folder)*
 
+#### Confusion Matrix after ONNX Conversion
+![ONNX Confusion Matrix](assets/confusion_matrix_onnx.png)<br/>
+*(`confusion_matrix_onnx.png` is in assets folder)*
+
 | Metric | Value | Description |
 | :--- | :--- | :--- |
-| **Accuracy** | **92.07%** | Strong generalization capability. |
-| **Precision** | **0.90** | Reliability in positive defect identification. |
-| **Recall** | **0.95** | High effectiveness in detecting anomalies. |
-| **Model Size** | **268 KB** | Extremely compact for edge deployment. |
-| **Input Shape** | (1, 224, 224, 1) | Grayscale, 224x224 resolution. |
+| **Accuracy** | **95.93%** | Strong generalization capability. |
+| **Precision** | **0.98** | Reliability in positive defect identification. |
+| **Recall** | **0.97** | High effectiveness in detecting anomalies. |
+| **Model Size** | **285 KB** | Extremely compact for edge deployment. |
+| **Input Shape** | (1, 3, 224, 224) | RGB (Distillation Input), 224x224 resolution. |
 
 ---
 
 ## Dataset Information
 The dataset was curated from peer-reviewed research papers (ScienceDirect, ResearchGate, IEEE Xplore) and supplemented with synthetic generation.
 
--   **Total Images (Current)**: **1807**
+-   **Total Images (Current)**: **1967**
 -   **Total Images (Planned)**: **500+** (Baseline exceeded)
 -   **Class Balance Strategy**: Synthetic generation for underrepresented classes.
 -   **Data Split**: **70%** Training / **20%** Validation / **10%** Testing.
+
+### Dataset Visualization
+![Dataset Sample 1](assets/dataset_1.png)
+![Dataset Sample 2](assets/dataset_2.png)
+*Representative samples from the semiconductor defect dataset.*
+
+### Class Distribution
+![Image Distribution](assets/image_distribution_per_class.png)
+*Visualizing the number of images per defect class to ensure balanced training.*
 
 ### Classes (8 Total)
 1.  Opens
